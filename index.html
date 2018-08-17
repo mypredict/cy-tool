@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>cy-tool</title>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #container {
+      width: 50rem;
+      height: 100rem;
+      margin: 0 auto 300px;
+      overflow: hidden;
+    }
+    h1, h2 {
+      font-weight: 500;
+      margin: 3rem 0;
+      text-align: center;
+    }
+    #time {
+      width: 65%;
+      height: 20rem;
+      line-height: 1.7;
+      margin: 0 auto;
+    }
+    .time {
+      margin-right: 2rem;
+    }
+    #drag {
+      width: 500px;
+      height: 400px;
+      margin: 3em auto;
+    }
+    #drag-area {
+      position: absolute;
+      width: 500px;
+      height: 400px;
+    }
+    #drag-div {
+      width: 100%;
+      height: 50px;
+      line-height: 3;
+      text-align: center;
+      background: #55F2CA;
+      cursor: pointer;
+    }
+    #canv {
+      width: 100%;
+      height: 300px;
+      background: green;
+    }
+    #input {
+      display: inline-block;
+      width: 40%;
+      height: 50px;
+    }
+    #submit {
+      display: inline-block;
+      cursor: pointer;
+      text-align: right;
+      width: 50%;
+      height: 50px;
+      line-height: 50px;
+    }
+    #pre {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
+      background: #eee;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>cy-tool使用效果</h1>
+    <div id="time">
+      <time class="time"></time><span>得到星期天: cyTool.weekTime() </span><br />
+      <time class="time"></time><span>默认不传参: cyTool.staticTime()</span><br />
+      <time class="time"></time><span>传一个参数: cyTool.staticTime('-')</span><br />
+      <time class="time"></time><span>传两个参数: cyTool.staticTime('/', '-')</span><br />
+      <time class="time"></time><span>传多个参数: cyTool.staticTime('~', '+', '-')</span><br />
+      <time class="time"></time><span>秒参数同上: cyTool.movingTime('*', '^')</span><br />
+    </div>
+    <h2>向下滚动进行懒加载</h2>
+    <div id="pre"></div>
+    <div id="drag">
+      <div id="drag-area">
+        <div id="drag-div">本区域点击后进行拖动</div>
+        <div id="canv">此处可以直接从桌面拖进图片</div>
+        <input id="input" type="file" value="上传">
+        <span id="submit">提交</span>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="./cy-tool.js"></script>
+  <script type="text/javascript" src="./main.js"></script>
+</body>
+</html>
